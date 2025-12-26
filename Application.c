@@ -1,10 +1,26 @@
 #include <stdio.h>
-#include <Windows.h>
+#include "raylib.h"
 
-// cl Application.c /link user32.lib "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools\Developer Command Prompt for VS 2022.lnk"
+// gcc -o Blunder.exe Application.c -L. -lraylib -lgdi32 -lwinmm
 
-int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
+int main()
 {
-	MessageBoxW(NULL, L"Somebody once told me...", L"Info", MB_OK);
-	return 0;
+	const int screenWidth = 800;
+	const int screenHeight = 450;
+
+	InitWindow(screenWidth, screenHeight, "Test Window");
+	SetTargetFPS(60);
+
+	while (!WindowShouldClose())
+	{
+		BeginDrawing();
+
+		ClearBackground(BLACK);
+		DrawText("Somebody once told me...", 190, 200, 20, RAYWHITE);
+
+		EndDrawing();
+	}
+	
+	CloseWindow();
+
 }
