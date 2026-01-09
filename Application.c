@@ -2,6 +2,7 @@
 #include "raylib.h"
 
 // gcc -o Blunder.exe Application.c -L. -lraylib -lgdi32 -lwinmm
+// Test
 
 int main()
 {
@@ -22,5 +23,6 @@ int main()
 	}
 	
 	CloseWindow();
+
 
 }
